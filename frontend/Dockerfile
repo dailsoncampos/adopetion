@@ -10,5 +10,6 @@ USER "${UID}:${GID}"
 
 WORKDIR /app
 
-ENTRYPOINT ["/app/bin/docker-entrypoint.sh"]
+RUN chown -R $USER:$USER /app
+
 CMD ["yarn", "start"]

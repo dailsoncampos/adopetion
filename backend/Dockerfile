@@ -13,6 +13,7 @@ RUN gem install bundler rails rake
 
 ENV RAILS_ROOT /app
 WORKDIR /app
+RUN chown -R $USER:$USER /app
 
 EXPOSE 3000
 
