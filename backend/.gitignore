@@ -1,0 +1,10 @@
+/.bundle
+/.vscode
+
+/tmp/*
+/tmp/cache/*
+/tmp/sessions/*
+/tmp/sockets/*
+/tmp/test/*
+
+/log
