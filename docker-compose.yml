@@ -8,7 +8,7 @@ services:
       - "3000:80"
     depends_on:
       - frontend
-      - api
+      - backend
   frontend:
     build:
       context: ./frontend
@@ -23,9 +23,9 @@ services:
       - ".env"
     volumes:
       - ./frontend:/app
-  api:
+  backend:
     build:
-      context: ./api
+      context: ./backend
       dockerfile: Dockerfile
       args:
         - "UID=${UID:-1000}"
@@ -41,7 +41,7 @@ services:
     ports:
       - "3001:3000"
     volumes:
-      - ./api:/app
+      - ./backend:/app
   postgres:
     image: postgres:12.11-alpine
     env_file:
